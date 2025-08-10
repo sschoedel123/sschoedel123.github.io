@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maxx's Motor Menagerie</title>
+    <meta
+      name="description"
+      content="A simple catalog of brushless motors and their specifications for hobby robotics."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Maxx's Motor Menagerie</h1>
+        <p class="tagline">
+          A centralized, searchable list of brushless motors and their key specs.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="table-controls">
+        <label for="searchInput" class="sr-only">Search motors</label>
+        <input id="searchInput" type="search" placeholder="Search by name, KV, voltage, etc." />
+      </section>
+
+      <section class="table-wrapper">
+        <table id="motorsTable" class="motors-table" aria-describedby="tableCaption">
+          <caption id="tableCaption" class="sr-only">
+            List of brushless motors and their specifications
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Motor</th>
+              <th scope="col">Efficiency Plot</th>
+              <th scope="col">KV</th>
+              <th scope="col">Max Current (A)</th>
+              <th scope="col">Max Voltage (V)</th>
+              <th scope="col">Stall Torque (Nm)</th>
+              <th scope="col">No-Load Current (A)</th>
+              <th scope="col">Phase Resistance (Ω)</th>
+              <th scope="col">Slots/Poles</th>
+              <th scope="col">Purchase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows inserted by scripts/main.js -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          Demo data for layout and functionality. Replace with real measurements and images.
+        </p>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+  </body>
+  </html>
+
+
