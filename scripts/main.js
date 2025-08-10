@@ -70,6 +70,7 @@ const motors = [
     name: "MM 2205",
     thumbnail: makePlaceholderSVG(64, 64, "MM 2205"),
     efficiencyPlot: makePlaceholderPNG(180, 110, "Efficiency", "Demo"),
+    vendor: "Rev Robotics",
     kv: 2300,
     currentRatingA: 30,
     voltageRatingV: 16.8,
@@ -84,6 +85,7 @@ const motors = [
     name: "MM 2806",
     thumbnail: makePlaceholderSVG(64, 64, "MM 2806"),
     efficiencyPlot: makePlaceholderPNG(180, 110, "Efficiency", "Demo"),
+    vendor: "Repeat Robotics",
     kv: 1200,
     currentRatingA: 40,
     voltageRatingV: 22.2,
@@ -98,6 +100,7 @@ const motors = [
     name: "MM 5010",
     thumbnail: makePlaceholderSVG(64, 64, "MM 5010"),
     efficiencyPlot: makePlaceholderPNG(180, 110, "Efficiency", "Demo"),
+    vendor: "mjbots",
     kv: 360,
     currentRatingA: 45,
     voltageRatingV: 25.2,
@@ -300,6 +303,9 @@ function renderTableRows(results) {
     );
     tr.appendChild(createCell("Slots/Poles", `${getHighlightHtml(m.slotsPoles, qUsed)}`));
 
+    // Vendor
+    tr.appendChild(createCell("Vendor", `${getHighlightHtml(m.vendor || "—", qUsed)}`));
+
     // Purchase
     tr.appendChild(
       createCell(
@@ -323,6 +329,7 @@ function setupSearch() {
         const haystack = [
           m.name,
           m.id,
+          m.vendor || "",
           String(m.kv),
           String(m.currentRatingA),
           String(m.voltageRatingV),
